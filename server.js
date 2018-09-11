@@ -5,6 +5,8 @@ const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
 const service = require('./service')
 
+
+
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
@@ -36,9 +38,9 @@ server.register([
                 path: '/institution/{id}/courses',
                 method: 'GET',
                 config: {
-                    handler: (request, reply) => {
-                        await service.getCoursesByInstitutionID();
-                        reply(request.params.id);
+                    handler: async (request, reply) => {
+                        const res = await service.getCoursesByInstitutionID();
+                        reply(res.data);
                     },
                     description: 'List institutions courses',
                     notes: 'Pass Institution id ',
