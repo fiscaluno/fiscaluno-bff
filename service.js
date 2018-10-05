@@ -12,4 +12,3 @@ async function getCoursesByInstitutionID() {
 }
 
 module.exports.getCoursesByInstitutionID = getCoursesByInstitutionID
-// module.exports.getUser = getUser

@@ -5,8 +5,6 @@ const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
 const service = require('./service')
 
-
-
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
